@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowq</class>
+ <widget class="QMainWindow" name="MainWindowq">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1209</width>
+    <height>693</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Giriş Ekranı</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame, QGroupBox {
+    background-color: rgba(20, 24, 35, 150); /* Yarı şeffaf koyu lacivert */
+    border: 1px solid rgba(255, 255, 255, 15);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Başlık Yazıları */
+QLabel {
+    color: #E0E6ED;
+    font-weight: 600;
+    background: transparent;
+}
+
+/* Modern Input Alanları */
+QLineEdit, QDateTimeEdit, QComboBox {
+    background-color: rgba(0, 0, 0, 100);
+    border: 1px solid rgba(79, 209, 197, 50); /* Hafif turkuaz kenarlık */
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4FD1C5;
+    background-color: rgba(0, 0, 0, 150);
+}
+
+/* Tablo Tasarımı (Transparan ve Temiz) */
+QTableWidget {
+    background-color: transparent;
+    alternate-background-color: rgba(255, 255, 255, 5);
+    border: none;
+    gridline-color: rgba(255, 255, 255, 10);
+}
+
+QHeaderView::section {
+    background-color: rgba(30, 41, 59, 180);
+    color: #4FD1C5;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Ana Aksiyon Butonu (Ödeme Al) */
+QPushButton#btn_odeme_al {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #4FD1C5, stop:1 #2C7A7B);
+    color: #0F172A;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+QPushButton#btn_odeme_al:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #64FFDA, stop:1 #4FD1C5);
+}
+
+/* İkincil Buton (Ara) */
+QPushButton#btn_ara {
+    background-color: rgba(79, 209, 197, 30);
+    border: 1px solid #4FD1C5;
+    color: #4FD1C5;
+    border-radius: 8px;
+}
+
+QPushButton#btn_ara:hover {
+    background-color: #4FD1C5;
+    color: #0F172A;
+}
+
+/* Scrollbar (Zarif ve İnce) */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(79, 209, 197, 80);
+    border-radius: 2px;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: transparent;
+    border: none;
+}
+QGroupBox {
+    background-color: transparent; /* İçindeki siyahlığı tamamen kaldırır */
+    border: 1px solid rgba(255, 255, 255, 30); /* İnce beyazımsı bir çerçeve */
+    border-radius: 15px;
+    margin-top: 20px; /* Başlık yazısının yerleşmesi için */
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 10px;
+    color: #4FD1C5; /* Başlık rengi (Turkuaz) */
+    font-weight: bold;
+}
+/* İstatistik Kartları için Özel Panel */
+QFrame#istatistik_kart {
+    background-color: rgba(30, 41, 59, 120); /* Hafif lacivert cam efekti */
+    border: 1px solid rgba(79, 209, 197, 60); /* Turkuaz parlayan kenarlık */
+    border-radius: 15px;
+}
+
+/* Kart İçindeki Başlık (Örn: Toplam Üye Sayısı) */
+QLabel#label{
+    color: #94A3B8; /* Daha sönük gri/mavi tonu */
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Kart İçindeki Veri (Örn: 150) */
+QLabel#label_toplam_uye{
+    color: #4FD1C5; /* Parlak Turkuaz */
+    font-size: 24px;
+    font-weight: 800;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>18</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>48</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>38</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1" rowspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame {
+  
+    
+	background-color: transparent; /* %60 şeffaf siyah */
+   
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="btn_antrenorler">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Antrenörler</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Bugünkü Ödeme Sayısı:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Aylık Gelir:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btn_uyeler">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Üyeler</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Toplam Üye Sayısı:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_toplam_uye">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Aktif Üye Sayısı:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_aktif_uye">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btn_raporlar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Raporlar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="btn_odemeler">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Ödemeler</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QPushButton" name="btn_ayarlar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Ayarlar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="btn_uyeliktipleri">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Üyelik Tipleri</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="btn_ekipmanlar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Ekipmanlar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btn_dersler">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Dersler</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1209</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

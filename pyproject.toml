@@ -1,0 +1,5 @@
+[project]
+name = "PySide Widgets Project"
+
+[tool.pyside6-project]
+files = ["form.ui", "login.py", "login.ui", "main.py", "mainwindow.py", "pyproject.toml", "requirements.txt", "ui_form.py", "ui_login.py"]

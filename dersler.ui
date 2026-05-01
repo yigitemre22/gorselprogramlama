@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1315</width>
+    <height>634</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dersler</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame, QGroupBox {
+    background-color: rgba(20, 24, 35, 150); /* Yarı şeffaf koyu lacivert */
+    border: 1px solid rgba(255, 255, 255, 15);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Başlık Yazıları */
+QLabel {
+    color: #E0E6ED;
+    font-weight: 600;
+    background: transparent;
+}
+
+/* Modern Input Alanları */
+QLineEdit, QDateTimeEdit, QComboBox {
+    background-color: rgba(0, 0, 0, 100);
+    border: 1px solid rgba(79, 209, 197, 50); /* Hafif turkuaz kenarlık */
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4FD1C5;
+    background-color: rgba(0, 0, 0, 150);
+}
+
+/* Tablo Tasarımı (Transparan ve Temiz) */
+QTableWidget {
+    background-color: transparent;
+    alternate-background-color: rgba(255, 255, 255, 5);
+    border: none;
+    gridline-color: rgba(255, 255, 255, 10);
+}
+
+QHeaderView::section {
+    background-color: rgba(30, 41, 59, 180);
+    color: #4FD1C5;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Ana Aksiyon Butonu (Ödeme Al) */
+QPushButton#btn_odeme_al {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #4FD1C5, stop:1 #2C7A7B);
+    color: #0F172A;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+QPushButton#btn_odeme_al:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #64FFDA, stop:1 #4FD1C5);
+}
+
+/* İkincil Buton (Ara) */
+QPushButton#btn_ara {
+    background-color: rgba(79, 209, 197, 30);
+    border: 1px solid #4FD1C5;
+    color: #4FD1C5;
+    border-radius: 8px;
+}
+
+QPushButton#btn_ara:hover {
+    background-color: #4FD1C5;
+    color: #0F172A;
+}
+
+/* Scrollbar (Zarif ve İnce) */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(79, 209, 197, 80);
+    border-radius: 2px;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: transparent;
+    border: none;
+}
+QGroupBox {
+    background-color: transparent; /* İçindeki siyahlığı tamamen kaldırır */
+    border: 1px solid rgba(255, 255, 255, 30); /* İnce beyazımsı bir çerçeve */
+    border-radius: 15px;
+    margin-top: 20px; /* Başlık yazısının yerleşmesi için */
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 10px;
+    color: #4FD1C5; /* Başlık rengi (Turkuaz) */
+    font-weight: bold;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>13</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>48</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1" rowspan="2" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string>Ders İşlemleri</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Ders Adı:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_dersAdi"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Antrenörler:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmb_Antrenor"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Başlangıç Saati:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="time_baslangicSaat"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Bitiş Saati:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="time_bitisSaat"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Kontenjan:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_kontenjan">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Gün:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_gun">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QPushButton" name="btn_bilgiGetir">
+              <property name="text">
+               <string>Bilgi Getir</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_Kaydet">
+              <property name="text">
+               <string>Kaydet</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_guncelle">
+              <property name="text">
+               <string>Güncelle</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_sil">
+              <property name="text">
+               <string>Sil</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_temizle">
+              <property name="text">
+               <string>Temizle</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Ders Listesi</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="tbl_dersListesi">
+            <column>
+             <property name="text">
+              <string>Ders Id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Ders Adı</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Antrenör Adı</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Kontenjan</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Başlangıç Saati</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Bitiş Saati</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Gün</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Derse Kayıtlı Üyeler</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="tbl_dersekayitliUyeler">
+            <column>
+             <property name="text">
+              <string>Ad</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Soyad</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Telefon</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Üyelik Bitiş Tarihi</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>58</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1315</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

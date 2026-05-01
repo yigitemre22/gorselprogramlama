@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1342</width>
+    <height>722</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ödeme Ekranı</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame, QGroupBox {
+    background-color: rgba(20, 24, 35, 150); /* Yarı şeffaf koyu lacivert */
+    border: 1px solid rgba(255, 255, 255, 15);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Başlık Yazıları */
+QLabel {
+    color: #E0E6ED;
+    font-weight: 600;
+    background: transparent;
+}
+
+/* Modern Input Alanları */
+QLineEdit, QDateTimeEdit, QComboBox {
+    background-color: rgba(0, 0, 0, 100);
+    border: 1px solid rgba(79, 209, 197, 50); /* Hafif turkuaz kenarlık */
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4FD1C5;
+    background-color: rgba(0, 0, 0, 150);
+}
+
+/* Tablo Tasarımı (Transparan ve Temiz) */
+QTableWidget {
+    background-color: transparent;
+    alternate-background-color: rgba(255, 255, 255, 5);
+    border: none;
+    gridline-color: rgba(255, 255, 255, 10);
+}
+
+QHeaderView::section {
+    background-color: rgba(30, 41, 59, 180);
+    color: #4FD1C5;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Ana Aksiyon Butonu (Ödeme Al) */
+QPushButton#btn_odeme_al {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #4FD1C5, stop:1 #2C7A7B);
+    color: #0F172A;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+QPushButton#btn_odeme_al:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #64FFDA, stop:1 #4FD1C5);
+}
+
+/* İkincil Buton (Ara) */
+QPushButton#btn_ara {
+    background-color: rgba(79, 209, 197, 30);
+    border: 1px solid #4FD1C5;
+    color: #4FD1C5;
+    border-radius: 8px;
+}
+
+QPushButton#btn_ara:hover {
+    background-color: #4FD1C5;
+    color: #0F172A;
+}
+
+/* Scrollbar (Zarif ve İnce) */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(79, 209, 197, 80);
+    border-radius: 2px;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: transparent;
+    border: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>13</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>78</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1" rowspan="2" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>220</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Üyeler</string>
+         </property>
+         <widget class="QLineEdit" name="txt_uyeAd">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>46</y>
+            <width>100</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>22</x>
+            <y>42</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Üye Ara:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_ara">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>40</y>
+            <width>91</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Ara</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tbl_uyeler">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>81</y>
+            <width>953</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Ad</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Soyad</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Telefon</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Üyelik Tipi</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Bitiş Tarihi</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Üye Borcu</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Üye Id</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>22</x>
+            <y>81</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Üye Seç:</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Yeni Ödeme</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Ödeme Tarihi:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDateEdit" name="dateEdit"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Tutar:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLineEdit" name="txt_tutar"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Ödeme Türü:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QComboBox" name="comboBox">
+            <item>
+             <property name="text">
+              <string>Nakit</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kart</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Havale</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Açıklama:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7" rowspan="2">
+           <widget class="QTextEdit" name="txt_aciklama">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="btn_odemeAl">
+            <property name="text">
+             <string>Ödeme Al</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="txt_uyeID">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Üye ID:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Ödeme Geçmişi</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="tbl_odemeler">
+            <column>
+             <property name="text">
+              <string>Tarih</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tutar</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Ödeme Türü</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Açıklama</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>88</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>17</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1342</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

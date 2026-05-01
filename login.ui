@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>729</width>
+    <height>368</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Giriş Ekranı</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame, QGroupBox {
+    background-color: rgba(20, 24, 35, 150); /* Yarı şeffaf koyu lacivert */
+    border: 1px solid rgba(255, 255, 255, 15);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Başlık Yazıları */
+QLabel {
+    color: #E0E6ED;
+    font-weight: 600;
+    background: transparent;
+}
+
+/* Modern Input Alanları */
+QLineEdit, QDateTimeEdit, QComboBox {
+    background-color: rgba(0, 0, 0, 100);
+    border: 1px solid rgba(79, 209, 197, 50); /* Hafif turkuaz kenarlık */
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4FD1C5;
+    background-color: rgba(0, 0, 0, 150);
+}
+
+/* Tablo Tasarımı (Transparan ve Temiz) */
+QTableWidget {
+    background-color: transparent;
+    alternate-background-color: rgba(255, 255, 255, 5);
+    border: none;
+    gridline-color: rgba(255, 255, 255, 10);
+}
+
+QHeaderView::section {
+    background-color: rgba(30, 41, 59, 180);
+    color: #4FD1C5;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Ana Aksiyon Butonu (Ödeme Al) */
+QPushButton#btn_odeme_al {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #4FD1C5, stop:1 #2C7A7B);
+    color: #0F172A;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+QPushButton#btn_odeme_al:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #64FFDA, stop:1 #4FD1C5);
+}
+
+/* İkincil Buton (Ara) */
+QPushButton#btn_ara {
+    background-color: rgba(79, 209, 197, 30);
+    border: 1px solid #4FD1C5;
+    color: #4FD1C5;
+    border-radius: 8px;
+}
+
+QPushButton#btn_ara:hover {
+    background-color: #4FD1C5;
+    color: #0F172A;
+}
+
+/* Scrollbar (Zarif ve İnce) */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(79, 209, 197, 80);
+    border-radius: 2px;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: transparent;
+    border: none;
+}
+QGroupBox {
+    background-color: transparent; /* İçindeki siyahlığı tamamen kaldırır */
+    border: 1px solid rgba(255, 255, 255, 30); /* İnce beyazımsı bir çerçeve */
+    border-radius: 15px;
+    margin-top: 20px; /* Başlık yazısının yerleşmesi için */
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 10px;
+    color: #4FD1C5; /* Başlık rengi (Turkuaz) */
+    font-weight: bold;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>80</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>219</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <widget class="QFrame" name="frame">
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0" colspan="2">
+       <widget class="QPushButton" name="btn_giris">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 20); /* Çok hafif beyaz saydamlık */
+    color: #ffffff;
+    border: 2px solid #3498db; /* Mavi çerçeve */
+    border-radius: 15px;
+    font-family: &quot;Segoe UI&quot;;
+}
+
+QPushButton:hover {
+    background-color: #3498db; /* Üzerine gelince içi mavi dolar */
+    color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Giriş Yap</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Kullanıcı Adı:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_sifre"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_kullanici"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Şifre:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>218</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>80</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
