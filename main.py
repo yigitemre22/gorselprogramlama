@@ -1,7 +1,7 @@
 import sys
 import pyodbc
 from PySide6.QtWidgets import QApplication, QMessageBox
-from ui_login import Login
+from login import Login
 
 def veritabani_kontrol():
     conn_str = (
